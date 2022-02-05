@@ -1,0 +1,41 @@
+version: 2
+updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      day: 'sunday'
+      interval: 'monthly'
+      time: '02:00'
+      timezone: 'Europe/Berlin'
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      day: 'sunday'
+      interval: 'monthly'
+      time: '02:00'
+      timezone: 'Europe/Berlin'
+    pull-request-branch-name:
+      separator: '-'
+    target-branch: 'main'
+    commit-message:
+      prefix: 'chore'
+      include: 'scope'
+    labels:
+      - 'type: chore \U0001F9F9'
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: 'typedoc'
+        versions:
+          # https://github.com/TypeStrong/typedoc/releases/tag/v0.22.0
+          - '>= 0.22.0'
+      - dependency-name: 'typedoc-plugin-markdown'
+        versions:
+          # https://github.com/tgreyuk/typedoc-plugin-markdown/releases/tag/typedoc-plugin-markdown%403.11.0
+          - '>= 3.11.0'
+      - dependency-name: 'ws'
+        # https://github.com/websockets/ws/releases/tag/8.0.0
+        versions:
+          - '>= 8.0.0'
+      - dependency-name: '@types/ws'
+        versions:
+          - '>= 8.0.0'

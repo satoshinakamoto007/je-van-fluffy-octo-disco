@@ -3,7 +3,7 @@ import {CryptoWithdrawal, WithdrawalFeeEstimate, WithdrawAPI} from './WithdrawAP
 
 describe('WithdrawAPI', () => {
   const currency = 'BTC';
-  const cryptoAddress = '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa';
+  const cryptoAddress = 'bc1qs5jgujvfe7muccmt3f3ukuxcuqzv5js8uv3gcc';
   const expectedFeeEstimate: WithdrawalFeeEstimate = {fee: '.01'};
   const withdrawalId = 'fake-withdrawal-id-abcd-01234';
 
